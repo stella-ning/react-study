@@ -1,12 +1,9 @@
-
-
-var React = require('react'),
-    ReactDOM = require('react-dom');
-
-require('./index.css');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import R from './home'
 
 
 ReactDOM.render(
-  <h1>hello ivan</h1>,
+  <R/>,
   document.getElementById('root')
 );
