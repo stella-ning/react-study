@@ -26,7 +26,6 @@ const SideBar = React.createClass({
 			<Menu
 				mode="inline"
 				selectedKeys={[this.state.current]}
-				style={{ width: 240 }}
 				onClick={this.handleClick}
 				defaultOpenKeys={['sub1']}
 			>
