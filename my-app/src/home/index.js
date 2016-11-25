@@ -76,7 +76,7 @@ var R = React.createClass({
 		return(
 			<Router history={hashHistory}>
                 <Route path="/" component={App}>
-					<IndexRoute component={Todo}/>
+					<IndexRoute component={Card}/>
 					<Route path='todo' component={Todo}/>
 					<Route path='card' component={Card}/>
 					<Route path='students' component={Students}/>
