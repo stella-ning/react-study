@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.menu{
+	padding-left:10px;
+}
+.dongnao,.todo-mvc{
+	float:left;
+	width: 80%;
+}
+.dongnao h3,.todo-mvc h3{
+	font-size:28px;
+	text-align:center;
+	line-height:100px;
+}
+.dongnao .content,.todo-mvc .content{
+	padding-left:10%;
+	width: 100%;
+}
+.todo-mvc .content ul{
+	margin-top:25px;
+}
+.todo-mvc .content ul li{
+	margin:15px auto;
+}
+.table{
+    width: 80%;
+    margin:50px;
+    text-align:center;
+    border-collapse:separate;
+    border-spacing:0;
+    border:1px solid #ccc;
+    font-size:14px;
+    color:#333;
+    font-family:'Microsoft yahei'
+}
+.table thead{
+    background:#abcdef;
+    color:#fff;
+    height:40px;
+    line-height: 40px;
+    font-size:16px;
+    font-weight:600;
+}
+.table tbody tr{
+    height:40px;
+    line-height: 40px;
+}
+.pages{width:500px;margin:10px 100px;text-align:right;}
+.pages a{display: inline-block;text-decoration: none;color:#666;padding:5px 10px;border:1px solid #ddd;border-radius:4px;margin-right:10px;}
+.pages a:hover{border-color:#2db7f5}
+.pages a.active{background:#2db7f5;color:#fff;}

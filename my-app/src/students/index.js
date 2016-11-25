@@ -28,7 +28,7 @@ var header = [
 
 var api = 'http://101.200.129.112:9527/react1/student/'
 
-//console.log(request)
+console.log(request)
 
 // var Title = React.createClass({
 //     render:function () {
@@ -51,7 +51,7 @@ var Students = React.createClass({
             sex:'boy',
             single:true,
 
-            selectedRowKeys: [],
+            selectedRowKeys: [],  // Check here to configure the default column
         }
     },
 
@@ -88,8 +88,6 @@ var Students = React.createClass({
                     onCancel={(e)=>this.setState({showAdd:false})}
                     title='增加学生信息'
                     onOk={this.handleSave}
-
-					
                 >
                     <Form>
                         <FormItem
@@ -211,6 +209,5 @@ var Students = React.createClass({
     }
 
 })
-
 
 export default Students
