@@ -88,6 +88,8 @@ var Students = React.createClass({
                     onCancel={(e)=>this.setState({showAdd:false})}
                     title='增加学生信息'
                     onOk={this.handleSave}
+
+					
                 >
                     <Form>
                         <FormItem
