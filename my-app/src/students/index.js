@@ -4,41 +4,14 @@ import {Table,Button,Modal,Form,Input,Radio,Row,Col,message} from 'antd'
 const FormItem = Form.Item
 const RadioGroup = Radio.Group;
 const RadioButton = Radio.Button;
-import 'antd/dist/antd.css'
-import request from 'superagent'
-
-var header = [
-    {title:'id',dataIndex:'id'},
-    {title:'name',dataIndex:'name'},
-    {title:'age',dataIndex:'age'},
-    {title:'sex',dataIndex:'sex'},
-    {
-        title:'single',
-        dataIndex:'single',
-
-        render:(single, obj)=>(
-            <div>
-                {obj.name} 这只 {single ? '单身狗':'恩爱狗'}
-                是个{obj.sex} 他今年{obj.age}岁了
-            </div>
-        )
-    },
-]
+import 'antd/dist/antd.css';
+import request from 'superagent';
+import './index.css';
 
 
 var api = 'http://101.200.129.112:9527/react1/student/'
 
 console.log(request)
-
-// var Title = React.createClass({
-//     render:function () {
-//         return (
-//             <div><Button>删除</Button></div>
-//         )
-//     }
-// })
-
-
 var Students = React.createClass({
     getInitialState:function () {
         return {
@@ -54,12 +27,10 @@ var Students = React.createClass({
             selectedRowKeys: [],  // Check here to configure the default column
         }
     },
-
     onSelectChange(selectedRowKeys) {
         console.log(selectedRowKeys)
         this.setState({ selectedRowKeys:selectedRowKeys });
     },
-
     render:function () {
         var loading = this.state.loading
         var selectedRowKeys = this.state.selectedRowKeys
@@ -67,6 +38,7 @@ var Students = React.createClass({
             selectedRowKeys:selectedRowKeys,
             onChange: this.onSelectChange,
         };
+		var header = this.state.header;
         var disabled = selectedRowKeys.length !==1
         return (
             <div className="dongnao">
@@ -137,6 +109,45 @@ var Students = React.createClass({
             </div>
         )
     },
+	componentWillMount(){
+		var that = this;
+		var header = [
+		    {title:'id',dataIndex:'id'},
+		    {title:'name',dataIndex:'name'},
+		    {title:'age',dataIndex:'age'},
+		    {title:'sex',dataIndex:'sex'},
+		    {
+		        title:'single',
+		        dataIndex:'single',
+
+		        render:(single, obj)=>(
+		            <div>
+		                {obj.name} 这只 {single ? '单身狗':'恩爱狗'}
+		                是个{obj.sex} 他今年{obj.age}岁了
+		            </div>
+		        )
+		    },
+			{
+				title:'操作',
+				width:"30%",
+				render: function () {
+					return (
+						<div>
+							<Row>
+								<Col span={5}>
+									<a href="javascript:void (0);" onClick={that.handleDelete}>删除</a>
+								</Col>
+								<Col span={5}>
+									<a href="javascript:void (0);" onClick={that.handleEdit}>编辑</a>
+								</Col>
+							</Row>
+						</div>
+					)
+				}
+			}
+		]
+		this.setState({header:header})
+	},
     handleDelete(){
         var that = this
         Modal.confirm({
@@ -209,5 +220,6 @@ var Students = React.createClass({
     }
 
 })
+
 
 export default Students

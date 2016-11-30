@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.loading{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: red;
+}
+.loading-content{
+    font-size: 60px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    margin-left: -100px;
+}
+.loading-content p{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.loading-icon i {
+    display: block;
+    font-size: 100px;
+}
