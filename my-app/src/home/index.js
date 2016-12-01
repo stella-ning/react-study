@@ -19,7 +19,7 @@ const SideBar = React.createClass({
 		};
 	},
 	handleClick(e) {
-		//console.log('Clicked: ', e);
+		console.log('Clicked: ', e);
 		this.setState({ current: e.key });
 	},
   	render() {
