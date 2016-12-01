@@ -29,7 +29,7 @@ const SideBar = React.createClass({
 				onClick={this.handleClick}
 				defaultOpenKeys={['sub1']}
 			>
-				<SubMenu key="sub1" title={<span><Icon type="appstore" /><span>Navigation One</span></span>}>
+				<SubMenu key="sub1" title={<span><Icon type="appstore" /><span>案例列表</span></span>}>
 					<MenuItem key="/todo"><Link to="/todo">todoMvc</Link></MenuItem>
 					<MenuItem key="/card"><Link to="/card">react选项卡</Link></MenuItem>
 					<MenuItem key="/students"><Link to="/students">学生信息管理系统</Link></MenuItem>

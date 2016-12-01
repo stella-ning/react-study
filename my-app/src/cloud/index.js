@@ -19,15 +19,15 @@ import {
     hashHistory
 } from 'react-router';
 
-var R = React.createClass({
-    render(){
-        return (
-            <Router history={hashHistory}>
-                <Route path='*' component={Cloud}/>
-            </Router>
-        )
-    }
-})
+// var R = React.createClass({
+//     render(){
+//         return (
+//             <Router history={hashHistory}>
+//                 <Route path='*' component={Cloud}/>
+//             </Router>
+//         )
+//     }
+// })
 
 
 
@@ -59,7 +59,7 @@ var Cloud = React.createClass({
                  onMouseDown={this.mouseDown}
             >
                 <h3 className="app-title"><Icon type="cloud" />stella云盘</h3>
-                
+
                 <FileList
                     file={this.state.file}
                     path={this.state.path}
@@ -426,4 +426,4 @@ var Cloud = React.createClass({
 
 
 
-export default R
+export default Cloud
