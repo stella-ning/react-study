@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'iconfont';  /* project id："182079" */
+    src: url('//at.alicdn.com/t/font_1u4ueo4gknijm7vi.eot');
+    src: url('//at.alicdn.com/t/font_1u4ueo4gknijm7vi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1u4ueo4gknijm7vi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1u4ueo4gknijm7vi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1u4ueo4gknijm7vi.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.cloud-title{
+    text-align: center;
+    padding:10px 0;
+}
+
+.cloud-breads{
+    padding:10px 0;
+    font-size: 14px;
+}
+
+.ant-breadcrumb{
+    text-align: left;
+}
+.file{
+    float: left;
+    width: 120px;
+    height: 127px;
+    margin: 4px 0 0 6px;
+    text-align: center;
+    border: 1px solid #fff;
+    position: relative;
+}
+.file:hover{
+    cursor: pointer;
+    border: 1px solid #f1f5fa;
+    border-radius: 5px;
+    background: #f1f5fa;
+}
+.file .files{
+    display: block;
+}
+
+.file .file-icon{
+    position: relative;
+    margin: 9px auto 0;
+    width: 84px;
+    height: 84px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.file .file-icon[data-ext$='.apk']{
+    background-image: url("../img/apk.png");
+}
+.file .file-icon[data-ext$='.mp3']{
+    background-image: url("../img/audio.png");
+}
+.file .file-icon[data-ext$='.mp4']{
+    background-image: url("../img/video.png");
+}
+.file .file-icon[data-ext$='.doc']{
+    background-image: url("../img/doc.png");
+}
+.file .file-icon[data-ext$='.xls']{
+    background-image: url("../img/xls.png");
+}
+.file .file-icon[data-ext$='.exe']{
+    background-image: url("../img/exe.png");
+}
+
+.file .file-icon[data-ext$='.js']{
+    background-image: url("../img/js.png");
+}
+.file .file-icon[data-ext$='.html']{
+    background-image: url("../img/html.png");
+}
+.file .file-icon[data-ext$='.psd']{
+    background-image: url("../img/psd.png");
+}
+
+.file .file-icon[data-ext$='.rar']{
+    background-image: url("../img/rar.png");
+}
+.file .file-icon[data-ext$='.txt']{
+    background-image: url("../img/txt.png");
+}
+.file .file-icon[data-ext$='.pdf']{
+    background-image: url("../img/pdf.png");
+}
+
+.file .file-icon[data-ext='default']{
+    background-image: url("../img/default.png");
+}
+.file .file-icon[data-type='folder']{
+    background-image: url("../img/folder.png");
+}
+
+.file .file-name{
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 6px 5px 5px;
+}

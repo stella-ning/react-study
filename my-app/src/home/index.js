@@ -3,7 +3,8 @@ import {Router, Route, hashHistory, Link, IndexRoute} from 'react-router';
 import {Menu, Row, Col, Switch,Icon} from 'antd';
 import Todo from '../todoMVC';
 import Card from '../card';
-import Cloud from '../cloud';
+import Cloud from '../Cloud0';
+import CloudTest from '../cloud';
 import Students from '../students';
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
@@ -34,6 +35,7 @@ const SideBar = React.createClass({
 					<MenuItem key="/card"><Link to="/card">react选项卡</Link></MenuItem>
 					<MenuItem key="/students"><Link to="/students">学生信息管理系统</Link></MenuItem>
 					<MenuItem key="/cloud"><Link to="/cloud">我的云盘</Link></MenuItem>
+					<MenuItem key="/cloudTest"><Link to="/cloudTest">测试练习</Link></MenuItem>
 				</SubMenu>
 			</Menu>
 	    );
@@ -82,6 +84,9 @@ var R = React.createClass({
 					<Route path='students' component={Students}/>
                     <Route path="cloud" component = {Cloud}>
                         <Route path="*" component={Cloud}/>
+                    </Route>
+					<Route path="cloudTest" component = {CloudTest}>
+                        <Route path="*" component={CloudTest}/>
                     </Route>
                 </Route>
             </Router>
