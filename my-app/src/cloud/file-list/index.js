@@ -1,13 +1,11 @@
-import React from 'react';
+import React from 'react'
 import {
 	Icon,
 	Input
 } from 'antd';
 import './index.css';
-import {hashHistory} from 'react-router';
-const host = 'http://101.200.129.112:9527/static/';
-import Loading from '../loading';
-
+import {Link} from 'react-router';
+//
 function getIcon(ext,isFolder) {
     if(isFolder){
         return 'folder-open'
@@ -31,80 +29,36 @@ function getIcon(ext,isFolder) {
     return 'file'
 }
 
-var FileItem = React.createClass({
-	render:function(){
-		const {name,ext,isFolder,path,action,onPick,active} = this.props;
-		const type = getIcon(ext,isFolder);
-		const act = name == active;
+var File = React.createClass({
+	render(){
+		const {name,ext,isFolder,path} = this.props;
+		var type = getIcon(ext,isFolder);
+
 		return(
-			<li className={act?"file-item active":"file-item"}>
-				<span
-					className = "file-item-icon"
-					onDoubleClick = {this.handleDBClick}
-					onMouseDown={this.mousedown}
-				>
+			<li>
+				<span>
 					<Icon type={type} />
 				</span>
-				<p>
-					<span className="file-item-name">{name}</span>
-				</p>
+
+				<p>{name}</p>
 			</li>
 		)
-	},
-	mousedown:function(e){
-		const {name,onChange,path,ext,isFolder,action,onRename,active,onPick} = this.props
-        onPick(name)
-	},
-	handleDBClick:function(){
-		const {name,onChange,path,ext,isFolder,onPick} = this.props;
-		onPick(name)
-        //console.log(name)
-		if(isFolder){
-            hashHistory.push(path);
-        }else {
-            window.open(host+path)
-        }
 	}
 })
+
 var FileList = React.createClass({
-	render:function(){
-		const {
-            file,
-			path,
-			action,
-			active,
-			onPick,
-			loading,
-            Load
-        }= this.props
-		var nodes = file.map(function(obj){
-			//console.log(obj);
-			return(
-				<FileItem
-					name={obj.name}
-					path={obj.path}
-					key={path+'-'+obj.name}
-					action={action}
-					isFolder={obj.isFolder}
-					ext={obj.ext}
-					active={active}
-					onPick={onPick}
-				/>
-			)
-		});
-		if(loading){
-            nodes = Load
-        }
+	render(){
+		var datas = this.props.data;
+		console.log(datas);
+		var list = datas.map(function (item) {
+            return <File key={item.name} name={item.name} ext={item.ext} isFolder={item.isFolder} path={item.path}/>
+        });
 		return(
-			<div className="file-content">
-				<ul className="file-list" style={{display:loading?'none':'block'}}>
-					{nodes}
-				</ul>
-				<div style={{display:loading?'block':'none'}}>
-					<Loading/>
-				</div>
-			</div>
+			<ul>
+				{list}
+			</ul>
 		)
 	}
-})
+});
+
 export default FileList;
