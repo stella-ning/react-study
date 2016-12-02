@@ -8,6 +8,8 @@ const PASTE = host + 'file/copy/';
 const CUT = host + 'file/move/';
 const UPLOAD = host + 'file/upload/';
 
+export const STATIC_FILE = host+"static";
+
 export function getFileList(path,successCb,errorCb){
 	request
         .get(GET_FILE)

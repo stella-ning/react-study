@@ -41,7 +41,7 @@ const File = React.createClass({
 
             Links = <a href={STATIC_FILE+path} target="_blank" className="files">
                         {Tag}
-                    <p className="file-name">{this.state.name}</p>
+                    <p className="file-name">{this.props.name}</p>
                 </a>
         }
 

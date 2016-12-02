@@ -48,7 +48,7 @@ let Cloud = React.createClass({
     getInitialState(){
         return {
             data:[],
-            path:'/',
+            path:'',
             routes:[]
         }
     },

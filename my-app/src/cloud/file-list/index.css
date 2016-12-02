@@ -1,62 +1,105 @@
 @charset "UTF-8";
-.file-content{
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.cloud-title{
+    text-align: center;
+    padding:10px 0;
+}
+
+.cloud-breads{
+    padding:10px 0;
+    font-size: 14px;
+}
+
+.ant-breadcrumb{
+    text-align: left;
+}
+.file{
+    float: left;
+    width: 120px;
+    height: 127px;
+    margin: 4px 0 0 6px;
+    text-align: center;
+    border: 1px solid #fff;
     position: relative;
 }
-
-.file-list{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: auto;
-    z-index: 2;
-}
-.file-list:after{
-    clear: both;
-}
-.file-list:after{
-    clear: both;
-}
-
-.file-item{
-    width: 150px;
-    height: 100px;
-    font-size: 20px;
-    transition: 0.3s;
+.file:hover,.file.hover{
     cursor: pointer;
-    border-radius: 4px;
-    float: left;
+    border: 1px solid #f1f5fa;
+    border-radius: 5px;
+    background: #f1f5fa;
 }
-.file-item:hover,.file-item.active{
-    background: #03d1ff;
-}
-.file-item:hover span,.file-item:hover .anticon,.file-item.active span,.file-item.active .anticon{
-    color: #ffffff;
-}
-
-
-.file-item span{
+.file .files{
     display: block;
-    color: #563A04;
-    text-align: center;
-}
-.file-item span .anticon{
-	color: #D0A94F;
 }
 
-.file-item-icon{
-    color: #787878;
-    line-height: 70px;
-    font-size: 45px;
+.file .file-icon{
+    position: relative;
+    margin: 9px auto 0;
+    width: 84px;
+    height: 84px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.file-item-name{
-    line-height: 30px;
-    font-size: 14px;
+.file .file-icon[data-ext$='.apk']{
+    background-image: url("../../img/apk.png");
+}
+.file .file-icon[data-ext$='.mp3']{
+    background-image: url("../../img/audio.png");
+}
+.file .file-icon[data-ext$='.mp4']{
+    background-image: url("../../img/video.png");
+}
+.file .file-icon[data-ext$='.doc']{
+    background-image: url("../../img/doc.png");
+}
+.file .file-icon[data-ext$='.xls']{
+    background-image: url("../../img/xls.png");
+}
+.file .file-icon[data-ext$='.exe']{
+    background-image: url("../../img/exe.png");
+}
+
+.file .file-icon[data-ext$='.js']{
+    background-image: url("../../img/js.png");
+}
+.file .file-icon[data-ext$='.html']{
+    background-image: url("../../img/html.png");
+}
+.file .file-icon[data-ext$='.psd']{
+    background-image: url("../../img/psd.png");
+}
+
+.file .file-icon[data-ext$='.rar']{
+    background-image: url("../../img/rar.png");
+}
+.file .file-icon[data-ext$='.txt']{
+    background-image: url("../../img/txt.png");
+}
+.file .file-icon[data-ext$='.pdf']{
+    background-image: url("../../img/pdf.png");
+}
+
+.file .file-icon[data-ext='default']{
+    background-image: url("../../img/default.png");
+}
+.file .file-icon[data-type='folder']{
+    background-image: url("../../img/folder.png");
+}
+
+.file .file-name{
+    display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 150px;
-    padding: 0 10px;
+    margin: 6px 5px 5px;
 }
