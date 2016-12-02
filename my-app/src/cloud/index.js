@@ -27,6 +27,7 @@ var Cloud = React.createClass({
 		return{
 			data:[],
 			path:'/',
+			routes:[],
 			menu:{
                 x:0,
                 y:0,
@@ -43,6 +44,31 @@ var Cloud = React.createClass({
 	},
 	//渲染到页面
 	render(){
+		//面包导航
+		var that = this,
+            routes = location.hash.split("/");
+
+        routes = routes.slice(1,routes.length);
+        routes = routes.map(function (item, index) {
+            var link = {};
+            link.url = routes.slice(0,index+1).join("/");
+            link.name = item;
+            return link;
+        });
+        var breads = [];
+
+        if (routes.length > 1) {
+            breads = routes.map(function (item, index) {
+                if (index < routes.length) {
+                    return <BreadItem key={index}><Link to={item.url}>{item.name}</Link></BreadItem>
+                } else {
+                    return <BreadItem>{item.name}</BreadItem>
+                }
+            });
+        } else {
+            breads = <BreadItem>{routes[0].name}</BreadItem>;
+        }
+
 		return(
 			<div className="app"
                  onContextMenu={(e)=>e.preventDefault()}
@@ -51,6 +77,11 @@ var Cloud = React.createClass({
 				 onDoubleClick={this.handleDoubleClick}
 			>
 				<h3 className="app-title"><Icon type="cloud" />stella云盘</h3>
+				<p>
+					<Breadcrumb>
+						{breads}
+					</Breadcrumb>
+				</p>
 				<FileList
 					data={this.state.data}
 					path={this.state.path}
@@ -341,6 +372,21 @@ var Cloud = React.createClass({
             this.hideMenu(e)
             this.unPickItem()
         }
+    },
+	//面包导航
+	getBreadNav(){
+        var routes = location.hash.split("/")
+        routes = routes.slice(1,routes.length);
+        routes = routes.map(function (item, index) {
+            var temp = {};
+            temp.url = routes.slice(0,index+1).join("/");
+            temp.name = item;
+            return temp;
+        });
+
+        this.setState({
+            routes:routes
+        });
     },
 	//获取文件数据
 	getFile(path){
